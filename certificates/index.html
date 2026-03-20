@@ -70,16 +70,16 @@
       let value = input.value.trim();
 
       if (!value) {
-        showError('Please enter a certificate ID.');
+        showError('Please enter the UID.');
         return;
       }
 
       // normalize: remove spaces, force lowercase for filename
       value = value.replace(/\s+/g, '');
-      const filename = value.toLowerCase() + '.html';
+      const filename = value.toLowerCase() + '.jpg';
 
       // if this file is in /certificates/, we redirect within that folder
-      // e.g. /certificates/cid00000023.html
+      // e.g. /certificates/uid00023.jpg
       window.location.href = filename;
     }
 
@@ -98,7 +98,7 @@
         <input
           type="text"
           id="cid-input"
-          placeholder="Enter Certificate ID (e.g. CID00000023)"
+          placeholder="Enter Unique ID (e.g. UID00023)"
           autocomplete="off"
         >
         <button type="submit">Verify Certificate</button>
